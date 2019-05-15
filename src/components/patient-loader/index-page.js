@@ -3,6 +3,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import * as React from 'react';
 import { ReviewCardComponent } from '../blog-card';
 import { styles } from './styles';
+import { PatientCardComponent } from '../patient-card/index-page';
 
 
 
@@ -18,10 +19,10 @@ class PatientLoader extends React.Component {
       <div className={classes.root} mt={1}>
         <Grid container spacing={24} >
           {
-            this.props.jsonData.map((Data, indexx) => {
+            this.props.jsonData.map((Data, index) => {
               return (
                 <Grid item xs={3}>
-                  <ReviewCardComponent key={indexx} CardDatas={Data} />
+                  <PatientCardComponent key={index} CardDatas={Data} />
                 </Grid>
               );
             })

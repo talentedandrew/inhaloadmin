@@ -19,7 +19,7 @@ class PatientIndex extends React.Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <HeaderComponent title='Blog' />
+        <HeaderComponent title='Patients' />
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Typography gutterBottom={true} component="h2">
