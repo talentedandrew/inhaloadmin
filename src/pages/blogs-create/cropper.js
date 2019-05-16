@@ -1,10 +1,9 @@
 import S3 from 'aws-sdk/clients/s3';
 import React from 'react';
 import '../../pages/blogs-create/style.css';
-import CircularIntegration from '../blogs-create/circular-progressBar';
-// import circularProgressBar from '../blogs-create/circular-progressBar';
 import SuccessAlert from '../blogs-create/alerts'
 const key = require('../../config/bucket');
+import Swal from 'sweetalert2'
 
 var aid = key.AWSAccessKeyId;
 var skey = key.AWSSecretKey;
@@ -44,11 +43,6 @@ class Editor extends React.Component {
             // TODO: do something with -> this.state.file
         }
     }
-    // changeVisibility() {
-    //     this.setState({
-    //         isVisible: true
-    //     })
-    // }
 
     render() {
         let { imagePreviewUrl } = this.state;
@@ -67,13 +61,11 @@ class Editor extends React.Component {
                         <input
                             className="custom-file-input"
                             type="file"
-                            onChange={(e) => this._handleImageChange(e)}
-                        // onClick={this.changeVisibility}
+                            onChange={(e) => this._handleImageChange(e) }
                         />
                     </label>
                 </form>
                 <div className="imgPreview">
-                    {/* <CircularIntegration onClick={this.changeVisibility} /> */}
                     {$imagePreview}
                 </div>
             </div>
@@ -107,12 +99,24 @@ class Editor extends React.Component {
 
         //get respond of the server
         bucket.upload(params, function (err, data) {
+
             if (err) {
-                alert('There was an error uploading your file: ' + err);
+                const error = console.log('print error : ' + err);
+                Swal.fire({
+                    title: 'Error',
+                    text: error,
+                    type: 'error',
+                    confirmButtonText: 'Cool'
+                })
+                // alert('There was an error uploading your file: ' + err);
                 return false;
             }
-
-            alert('Successfully uploaded file.');
+            Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            )
+            //alert('Successfully uploaded file.');
             console.log('Successfully uploaded file.');
             // eslint-disable-next-line jsx-a11y/alt-text
             console.log(data.key);
