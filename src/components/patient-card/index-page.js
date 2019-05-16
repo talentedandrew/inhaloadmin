@@ -30,7 +30,7 @@ class PatientCard extends React.Component {
               avatar={
                 <Avatar aria-label="Recipe" className={classes.avatar}>
                   R
-            </Avatar>
+                </Avatar>
               }
               title={this.props.CardDatas.topic}
               subheader="September 14, 2016"
