@@ -114,7 +114,7 @@ class BlogCreateIndex extends React.Component {
               </Button>
               <Button variant="contained" size="medium" color="primary" className={classes.buttons} onClick={this.openModal}>
                 Publish Blog
-                 <CloudUploadIcon className={classes.rightIcon} />
+                <CloudUploadIcon className={classes.rightIcon} />
               </Button>
             </Bar>
             <Container>
