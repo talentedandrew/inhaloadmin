@@ -31,7 +31,7 @@ class ReviewCard extends React.Component {
 
     return (
       <CardActionArea className={classes.card} onClick={this.testMethod}>
-        <Card className={classes.card}>
+        <Card className={classes.card} raised={true}>
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" className={classes.avatar}>
@@ -45,7 +45,8 @@ class ReviewCard extends React.Component {
             className={classes.media}
             image={this.props.CardDatas.image_url}
             title="Paella dish"
-          />
+          >
+          </CardMedia>
           <CardContent>
             <Typography component="p">
               This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -53,7 +54,7 @@ class ReviewCard extends React.Component {
           </Typography>
           </CardContent>
         </Card>
-      </CardActionArea>
+      </CardActionArea >
     );
   }
 

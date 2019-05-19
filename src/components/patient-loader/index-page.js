@@ -17,7 +17,7 @@ class PatientLoader extends React.Component {
 
     return (
       <div className={classes.root} mt={1}>
-        <Grid container spacing={24} >
+        <Grid container wrap="nowrap" spacing={24} >
           {
             this.props.jsonData.map((Data, index) => {
               return (

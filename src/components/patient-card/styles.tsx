@@ -5,8 +5,16 @@ import createStyles from '@material-ui/core/styles/createStyles';
 
 export const styles = (theme: Theme) =>
     createStyles({
+        root: {
+            flexGrow: 1,
+        },
+        para: {
+            color: 'white'
+        },
         card: {
             maxWidth: 400,
+            background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)',
+            borderRadius:'10%',
         },
         media: {
             height: 0,
@@ -29,5 +37,9 @@ export const styles = (theme: Theme) =>
         },
         avatar: {
             backgroundColor: red[500],
-        },
+        }, paper: {
+            padding: theme.spacing.unit * 2,
+            textAlign: 'center',
+            color: theme.palette.text.secondary,
+        }
     });
