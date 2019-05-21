@@ -1,7 +1,6 @@
 import S3 from 'aws-sdk/clients/s3';
 import React from 'react';
 import '../../pages/blogs-create/style.css';
-import SuccessAlert from '../blogs-create/alerts'
 const key = require('../../config/bucket');
 import Swal from 'sweetalert2'
 

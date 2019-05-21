@@ -63,6 +63,7 @@ export const styles = (theme: Theme) =>
         },
         root: {
             display: 'flex',
+            background:'linear-gradient(to top, #accbee 0%, #e7f0fd 100%)'
         },
         tableContainer: {
             height: 320,
