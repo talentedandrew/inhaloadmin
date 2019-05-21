@@ -5,7 +5,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import Cropper from  './pages/blogs-create/cropper';
 import '../src/pages/blogs-create/style.css';
-// import CircularProgress from './pages/blogs-create/circular-progressBar';
+
 
 ReactDOM.render( <
     App / > ,
