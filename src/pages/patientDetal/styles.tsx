@@ -114,7 +114,8 @@ export const styles = (theme: Theme) =>
             width: '100%',
             height: '55%',
             // background: 'rgb(203,238,174)',
-            background: 'radial-gradient(circle, rgba(203,238,174,1) 0%, rgba(148,187,233,1) 100%)'
+            // background: 'radial-gradient(circle, rgba(203,238,174,1) 0%, rgba(148,187,233,1) 100%)',
+            backgroundImage: `url(${"../../assets/profileback.jpeg"})`
 
         },
         detailDiv: {
@@ -147,7 +148,7 @@ export const styles = (theme: Theme) =>
             height: 150,
             // marginTop: 130,
             // justify:'flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'
-            
+
         },
         profileName: {
 
