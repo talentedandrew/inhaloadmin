@@ -1,4 +1,4 @@
-import { CardActionArea, Paper } from '@material-ui/core';
+import { CardActionArea } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -6,15 +6,39 @@ import CardHeader from '@material-ui/core/CardHeader';
 import { Grid } from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
 import { styles } from './styles';
-import { PatientCardContentComponent } from './card-content';
+import { CardHeadComponent } from './card-Head';
+
+const colorsPallat = {
+  criticle: { background: 'linear-gradient(75deg, rgba(245,70,70,1) 0%, rgba(255,103,103,1) 25%, rgba(251,136,136,1) 50%, rgba(255,154,154,1) 75%, rgba(255,185,185,1) 100%)' },
+  well: { background: 'linear-gradient(75deg, rgba(0,191,83,1) 0%, rgba(0,224,109,1) 25%, rgba(0,224,109,1) 50%, rgba(0,255,149,1) 75%, rgba(210,255,235,1) 100%)' },
+  worse: { background: 'linear-gradient(75deg, rgba(0,184,191,1) 0%, rgba(0,216,224,1) 25%, rgba(0,216,224,1) 50%, rgba(0,246,255,1) 75%, rgba(210,241,255,1) 100%)' }
+}
 
 class PatientCard extends React.Component {
-  state = { expanded: false };
+  state = {
+    expanded: false,
+    colorScheme: ''
+  };
+
+  constructor(props) {
+    super(props)
+  }
+
+  componentWillMount() {
+    if (this.props.CardDatas.asthma_condition === 'criticle') {
+      this.setState({ colorScheme: colorsPallat.criticle })
+    } else if (this.props.CardDatas.asthma_condition === 'well') {
+      this.setState({ colorScheme: colorsPallat.well })
+    } else if (this.props.CardDatas.asthma_condition === 'worse') {
+      this.setState({ colorScheme: colorsPallat.worse })
+    }
+
+  }
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -26,25 +50,24 @@ class PatientCard extends React.Component {
     return (
       <div className={classes.card} >
         <CardActionArea className={classes.card} component={Link} to='/patient/detail'>
-          <Card className={classes.card} raised={true}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="Recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              title={this.props.CardDatas.topic}
-              subheader="September 14, 2016"
-            />
-            <CardContent>
-
-              <PatientCardContentComponent />
-
+          <Card className={classNames(classes.card)} style={this.state.colorScheme} raised={true}>
+            <CardContent >
+              <Typography component="div">
+                <CardHeadComponent name={this.props.CardDatas.topic}/>
+              </Typography>
             </CardContent>
             <CardContent>
-              <Typography component="p" className={classes.para}>
-                This impressive paella is a perfect party dish and a fun meal to cook together with your
-                guests. Add 1 cup of frozen peas along with the mussels, if you like.
+
+              <Typography component="h1" className={classes.para} style={{ fontSize: '30px', fontWeight: 'bold', textAlign: "center", textAlign: "center" }}>
+                {this.props.CardDatas.asthma_condition}
+              </Typography>
+            </CardContent>
+            <CardContent>
+              <Typography component="h1" className={classes.para} style={{ fontSize: '20px', textAlign: "left" }}>
+                {this.props.CardDatas.topic}
+              </Typography>
+              <Typography component="h1" className={classes.para} style={{ fontSize: '20px', textAlign: "right", textAlign: "top" }}>
+                {this.props.CardDatas.topic}
               </Typography>
             </CardContent>
           </Card>

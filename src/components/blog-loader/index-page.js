@@ -21,7 +21,7 @@ class BlogLoader extends React.Component {
             this.props.jsonData.map((Data, indexx) => {
               return (
 
-                <Grid item xs={3}>
+                <Grid item xl={3} xs={12} sm={6} md={3} lg={3} >
                   <ReviewCardComponent key={indexx} CardDatas={Data} />
                 </Grid>
 

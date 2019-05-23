@@ -5,6 +5,7 @@ import { ReviewCardComponent } from '../blog-card';
 import { styles } from './styles';
 import { PatientCardComponent } from '../patient-card/index-page';
 
+import classNames from 'classnames';
 
 
 class PatientLoader extends React.Component {
@@ -17,12 +18,12 @@ class PatientLoader extends React.Component {
 
     return (
       <div className={classes.root} mt={1}>
-        <Grid container wrap="nowrap" spacing={24} >
+        <Grid container spacing={2} >
           {
             this.props.jsonData.map((Data, index) => {
               return (
-                <Grid item xs={3}>
-                  <PatientCardComponent key={index} CardDatas={Data} />
+                <Grid item xl={3} xs={12} sm={6} md={3}  lg={3}  key={index} >
+                  <PatientCardComponent CardDatas={Data} />
                 </Grid>
               );
             })
