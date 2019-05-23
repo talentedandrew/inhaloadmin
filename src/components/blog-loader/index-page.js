@@ -5,7 +5,6 @@ import { ReviewCardComponent } from '../blog-card';
 import { styles } from './styles';
 
 
-
 class BlogLoader extends React.Component {
   state = {
     open: true,
@@ -16,16 +15,20 @@ class BlogLoader extends React.Component {
 
     return (
       <div className={classes.root} mt={1}>
-        <Grid container spacing={24} >
+        <Grid container spacing={24}>
+
           {
             this.props.jsonData.map((Data, indexx) => {
               return (
+
                 <Grid item xs={3}>
                   <ReviewCardComponent key={indexx} CardDatas={Data} />
                 </Grid>
+
               );
             })
           }
+
         </Grid>
       </div>
     );
