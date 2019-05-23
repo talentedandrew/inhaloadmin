@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
+import classNames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -18,7 +19,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { styles } from './styles';
 import { CardActionArea } from '@material-ui/core';
-
+import { Link } from 'react-router-dom';
 class ReviewCard extends React.Component {
   state = { expanded: false };
 
@@ -30,7 +31,7 @@ class ReviewCard extends React.Component {
     const { classes } = this.props;
 
     return (
-      <CardActionArea className={classes.card} onClick={this.testMethod}>
+      <CardActionArea className={classes.card} component={Link} to='/blogs/detail'>
         <Card className={classes.card} raised={true}>
           <CardHeader
             avatar={
