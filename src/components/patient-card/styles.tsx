@@ -13,8 +13,7 @@ export const styles = (theme: Theme) =>
         },
         card: {
             maxWidth: 400,
-            background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)',
-            borderRadius:'10%',
+            borderRadius: '10%',
         },
         media: {
             height: 0,
@@ -35,11 +34,19 @@ export const styles = (theme: Theme) =>
         expandOpen: {
             transform: 'rotate(180deg)',
         },
-        avatar: {
-            backgroundColor: red[500],
-        }, paper: {
+        paper: {
             padding: theme.spacing.unit * 2,
             textAlign: 'center',
             color: theme.palette.text.secondary,
+        },
+        avatar: {
+            margin: 10,
+            backgroundColor: red[500],
+        },
+        bigAvatar: {
+            backgroundColor: red[500],
+            margin: 10,
+            width: 60,
+            height: 60,
         }
     });
