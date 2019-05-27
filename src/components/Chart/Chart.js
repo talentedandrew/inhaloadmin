@@ -21,8 +21,8 @@ class ChartComponentt extends Component {
                 <Grid container={true} item xl={12} xs={10} sm={8} md={6} lg={4}> 
                     <div className={classes.chartPaper}>
                         <LineChart
-                            width='120vh'
-                            height='45vh'
+                            width='115vh'
+                            height='40vh'
                             xtitle="Date"
                             ytitle="Peak Flow"
                             curve={true}

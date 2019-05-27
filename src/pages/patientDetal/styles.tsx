@@ -70,7 +70,7 @@ export const styles = (theme: Theme) =>
         },
         paperOne: {
             width: 'auto',
-            height: '100vh',
+            height: '87vh',
             // position: 'relative',
             // right: '0',
             // top: '0',
@@ -86,69 +86,96 @@ export const styles = (theme: Theme) =>
         },
         paperTwo: {
             width: 'auto',
-            height: '50vh',
-            // marginTop:'3%',
-            // marginLeft: '1%',
-            // // marginRight:'1%',
-            // marginBottom: '2%',
-            // // paddingTop: '0.1%',
-            // // paddingBottom: '1%',
+            height: '43vh',
             borderRadius: '12px',
         },
         paperThree: {
-            width: 'auto',
-            height: '50vh',
-            // position: 'relative',
-            // width: '60%',
-            // height: '45%',
-
-            // // marginTop:'1%',
-            // marginLeft: '1%',
-            // // marginRight:'1%',
-            // // marginBottom: '2%',
-            // // paddingTop: '0.1%',
-            // // paddingBottom: '1%',
-            // borderRadius: '12px',
+            width: '35em',
+            height: '10em',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginLeft: '2vh',
+            marginRight: '3vh',
+            marginTop: '1em',
+            borderRadius: '20px',
         },
         profileBackground: {
             width: '100%',
             height: '55%',
-            // background: 'rgb(203,238,174)',
             // background: 'radial-gradient(circle, rgba(203,238,174,1) 0%, rgba(148,187,233,1) 100%)',
-            backgroundImage: `url(${"../../assets/profileback.jpeg"})`
 
         },
         detailDiv: {
             // position: 'absolute',
-            marginTop: '7em',
-            marginLeft: '3em',
-            marginRight: '7em',
+
+            // marginTop: '7em',
+            // marginLeft: '3em',
+            // marginRight: '7em',
         },
         formLabel: {
-            fontSize: '20px',
-
-            // paddingLeft: '',
-            // paddingRight: '1em',
-            // paddingBottom: '7%',
-            // paddingBottom: '7%'
-            // marginLeft: '3em',  
-            // marginRight: '5em',
-            // marginBottom:'2em',
-            // marginTop:'2em'
-        },
-        FontAwesomeIcon: {
-            marginRight: '5px',
-            paddingRight: '3px',
-            paddingBottom: '7px'
+            fontSize: '30px',
+            justifyContent: 'center',
+            alignContent: 'center',
+            alignItems: 'center',
+            color: '#0652DD',
+            marginTop: '10%',
+            // marginLeft: '3em',
+            // marginRight: '3em',
+            //
+            position: 'absolute',
+            // bottom:'0',
+            // left:'0',
+            // right:'0',
+            // justifyContent:'center',
+            // alignItems:'center',
+            // top:'0'
         },
         bigAvatar: {
             // position:'relative',
             // margin: 10,
             width: 150,
             height: 150,
-            // marginTop: 130,
+            marginTop: 160,
+            justifyContent: 'center',
+            alignContent: 'center',
             // justify:'flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'
 
+        },
+        bioDate: {
+            fontSize: '15px',
+            fontWeight: 'bold',
+            color: '#4b4b4b',
+            marginTop: '20px',
+            marginBottom: '10px',
+            justifyContent: 'center',
+            alignContent: 'center',
+            display: 'inline',
+            marginRight: '10px',
+            marginLeft: '10px'
+
+        },
+        fontAwesomeIcon: {
+            marginRight: '12px',
+        },
+        bioDateContainer: {
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center'
+
+        },
+        horizontalLine: {
+            // color: '#95a5a6',
+            // backgroundColor: '#95a5a6',
+            // marginRight: '12px',
+            // marginLeft: '12px'
+            display: 'block',
+            marginTop: '2em',
+            marginBottom: '0.5em',
+            marginLeft: '20px',
+            marginRight: '20px',
+            borderStyle: 'inset',
+            borderWidth: '1px',
+            // 
         },
         profileName: {
 
@@ -157,6 +184,54 @@ export const styles = (theme: Theme) =>
             // justify: 'center',
             // alignItems:'stretch',
             // alignContent:'stretch'
+            maintainAspectRatio: 'false'
+        },
+        PaperFour: {
+            width: '35em',
+            height: '10em',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginLeft: '2vh',
+            marginRight: '3vh',
+            marginTop: '1em',
+            borderRadius: '20px',
+        },
+        countupContainer: {
+            position:'absolute',
+            marginLeft: '1.5em',
+            marginTop: '3em',
+            paddingTop: '1em'
+        },
+        countNumber: {
+            fontSize: '40px',
+            fontWeight: 'bold',
+            color: '#0984e3',
+            display:'inline',
+            marginLeft:'60px',
+            marginBottom:'10px',
+            marginTop:'10px'
+        },
+        countbestFev: {
+            fontSize: '40px',
+            fontWeight: 'bold',
+            color: '#0984e3',
+            display:'inline',
+            marginLeft:'160px',
+            marginBottom:'10px'
+        },
+        countupLabel: {
+            display: 'block',
+            marginTop: '4px',
+            color: '#34495e',
+            justifyContent: 'center',
+            marginLeft: '50px'
+        },
+        dateContainer: {
+            width:'50%',
+            height:'100%',
+            // backgroundColor:'black',
+            background: 'linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6)'
+            
         },
         // chartComponent: {
         //     marginTop: '1em',
