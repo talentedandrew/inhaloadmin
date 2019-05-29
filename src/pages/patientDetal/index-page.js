@@ -1,7 +1,7 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
-import * as React from 'react';
+import React, { Fragment, useState } from 'react';
 import { HeaderComponent } from '../../components';
 import { ChartComponent } from '../../components/Chart/Chart'
 import FormLabel from '@material-ui/core/FormLabel';
@@ -10,16 +10,22 @@ import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser, faDove, faUserCircle, faVenusMars, faBirthdayCake, faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faDove, faUserCircle, faVenusMars, faBirthdayCake, faArrowAltCircleDown, faMonument } from "@fortawesome/free-solid-svg-icons";
 import { Image, Label, Segment } from 'semantic-ui-react';
 import Fab from '@material-ui/core/Fab';
 import Button from '@material-ui/core/Button';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-// import { InlineDatePicker } from "material-ui-pickers";
 import { styles } from './styles';
 import CountUp from 'react-countup';
+import DatePicker from 'react-date-picker';
+import 'react-date-picker/dist/entry.nostyle';
+import Calendar from 'react-calendar';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+
+// import ModernDatepicker from 'react-modern-datepicker';
 var bg = require('../../assets/tab.png')
+var divBg = require('../../assets/tabtwo.png')
 
 library.add(faUser, faDove, faUserCircle, faVenusMars, faBirthdayCake, faArrowAltCircleDown);
 
@@ -28,7 +34,7 @@ class PatientDetail extends React.Component {
     super(props);
     this.state = {
       open: true,
-      // date: new Date(),
+      date: new Date(),
       firstName: 'Senelith',
       lastName: 'Perera',
       gender: 'Male',
@@ -40,25 +46,14 @@ class PatientDetail extends React.Component {
       best_fev1: '673',
       best_pef: '843'
     };
-    // this.handleChange = this.handleChange(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(date) {
-    // this.setState({
-    //   date: date
-    // })
-  }
-
-  // handleSelect(date) {
-  //   this.setState({
-  //     date: date
-  //   })
-  // }
-
-
+  onChange = date => this.setState({ date })
 
   render() {
     const { classes } = this.props;
+
 
     var style = {
       paperContainer: {
@@ -90,13 +85,19 @@ class PatientDetail extends React.Component {
                   </Grid>
                   <Grid item xl={12} xs={12} sm={12} md={12} lg={12}>
                     <Paper className={classes.paperTwo} elevation={2}>
-                      <div container={true} className={classes.dateContainer}>
-                        <DatePicker
-                          // selected={this.state.date}
-                          onChange={this.handleChange}
-                          // onSelect={this.handleSelect}
-                        />
+                      <div container="true"
+                        style={{ backgroundImage: "url(" + divBg + ")" }}
+                        className={classes.dateContainer}>
+                        {/* <div className={classes.datePicker}> */}
+                        <Paper elevation={10} className={classes.paperCalendar}>
+                          <Calendar
+                            onChange={this.onChange}
+                            value={this.state.date}
+                          />
+                        </Paper>
                       </div>
+
+                      {/* </div> */}
                     </Paper>
                   </Grid>
                 </Grid>
@@ -138,7 +139,8 @@ class PatientDetail extends React.Component {
                     <div container={true} className={classes.countupContainer}>
                       <div style={{ display: 'inline' }}>
                         {/* <formLabel className={classes.countupLabel}>Time Breathing</formLabel> */}
-                        <CountUp duration={5} delay={0} end={this.state.timeBreathing} className={classes.countNumber} />
+                          <CountUp duration={5} delay={0} end={this.state.timeBreathing} className={classes.countNumber} />
+                        {/* <CountUp duration={5} delay={0} end={this.state.timeBreathing} className={classes.countNumber} /> */}
                       </div>
                       <div style={{ display: 'inline' }}>
                         {/* <formLabel className={classes.countupLabel}>best fev1</formLabel> */}
@@ -149,22 +151,7 @@ class PatientDetail extends React.Component {
                         <CountUp duration={5} delay={0} end={this.state.best_pef} className={classes.countNumber} />
                       </div>
                     </div>
-                    {/* <div container={true} >
-                    <formLabel className={classes.countupLabel}>Time Breathing</formLabel>
-                    <formLabel className={classes.countupLabel}>best Fev1</formLabel>
-                    <formLabel className={classes.countupLabel}>best pef</formLabel>
-                    </div> */}
                   </Paper>
-                  {/* <div container={true} className={classes.countupContainer}>
-                    <CountUp duration={5} delay={0} end={this.state.timeBreathing} className={classes.countNumber} />
-                    <formLabel className={classes.countupLabel}>Time Breathing</formLabel> */}
-                  {/* <CountUp duration={5} delay={0} end={this.state.best_fev1} className={classes.countbestFev}/> */}
-                  {/* <formLabel>best Fev1</formLabel> */}
-                  {/* </div> */}
-                  {/* <div container={true} className={classes.countupContainer}> */}
-                  {/* <CountUp duration={5} delay={0} end={this.state.best_fev1} className={classes.countbestFev}/>
-                    <formLabel style={{ display: 'inline', marginTop: '4px', color: '#34495e', justifyContent: 'center', marginLeft: '40px' }}>best Fev1</formLabel> */}
-                  {/* </div> */}
                 </Paper>
               </Grid>
             </Grid>

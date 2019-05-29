@@ -63,9 +63,10 @@ export const styles = (theme: Theme) =>
         },
         root: {
             display: 'flex',
+            overflow:'hidden'
             // flexGrow:1,
             // height:'100%',
-            backgroundColor: 'linear-gradient(to right, #78ffd6, #a8ff78)'
+            // backgroundColor: 'linear-gradient(to right, #78ffd6, #a8ff78)'
             // width:'100%'
         },
         paperOne: {
@@ -160,7 +161,8 @@ export const styles = (theme: Theme) =>
         bioDateContainer: {
             justifyContent: 'center',
             alignItems: 'center',
-            alignContent: 'center'
+            alignContent: 'center',
+            marginLeft: '3em'
 
         },
         horizontalLine: {
@@ -197,7 +199,7 @@ export const styles = (theme: Theme) =>
             borderRadius: '20px',
         },
         countupContainer: {
-            position:'absolute',
+            position: 'absolute',
             marginLeft: '1.5em',
             marginTop: '3em',
             paddingTop: '1em'
@@ -206,18 +208,18 @@ export const styles = (theme: Theme) =>
             fontSize: '40px',
             fontWeight: 'bold',
             color: '#0984e3',
-            display:'inline',
-            marginLeft:'60px',
-            marginBottom:'10px',
-            marginTop:'10px'
+            display: 'inline',
+            marginLeft: '60px',
+            marginBottom: '10px',
+            marginTop: '10px'
         },
         countbestFev: {
             fontSize: '40px',
             fontWeight: 'bold',
             color: '#0984e3',
-            display:'inline',
-            marginLeft:'160px',
-            marginBottom:'10px'
+            display: 'inline',
+            marginLeft: '160px',
+            marginBottom: '10px'
         },
         countupLabel: {
             display: 'block',
@@ -227,18 +229,45 @@ export const styles = (theme: Theme) =>
             marginLeft: '50px'
         },
         dateContainer: {
-            width:'50%',
-            height:'100%',
-            // backgroundColor:'black',
-            background: 'linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6)'
-            
+            width: '38%',
+            height: '100%',
+            // backgroundColor: '#00a8ff',
+            // backgroundColor: '#8EC5FC',
+            // background-color: #349cde;
+            // backgroundImage: 'linear-gradient(90deg, #349cde 18%, #349cde 48%, #ffffff 100%)'
+
+            // background- image: linear - gradient(62deg, #8EC5FC 0 %, #E0C3FC 100 %);
+
+            // background: 'linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6)'
+
         },
-        // chartComponent: {
-        //     marginTop: '1em',
-        //     marginBottom: '1em',
-        //     marginLeft: '1em',
-        //     marginRight: '1em',
-        // },
+        datePicker: {
+            width: '40em',
+            height: '60em',
+            // paddingLeft: '100px',
+            // paddingRight:'20%',
+            // paddingTop: '80px',
+            // paddingBottom: '10px',
+            // fontSize: '17px',
+            // fontWeight: 'bold',
+            // backgroundColor:'#ffffff',
+            color: '#ffffff',
+            position: 'absolute',
+            borderRadius: ' 12px',
+            marginLeft: '5%',
+            alignContent: 'center',
+            marginTop: '4em',
+            justifyContent: 'center'
+            // marginRight: '25%',
+        },
+        paperCalendar: {
+            position: 'absolute',
+            width: '25em',
+            height: '29%',
+            marginTop: '4.5em',
+            marginLeft: '2em',
+            borderRadius: '12px'
+        },
         tableContainer: {
             height: 320,
         },

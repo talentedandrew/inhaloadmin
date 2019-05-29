@@ -18,7 +18,7 @@ class ChartComponentt extends Component {
 
         return (
             <Grid container spacing={24}>
-                <Grid container={true} item xl={12} xs={10} sm={8} md={6} lg={4}> 
+                <Grid container={true} item xl={12} xs={10} sm={8} md={6} lg={4}>
                     <div className={classes.chartPaper}>
                         <LineChart
                             width='115vh'
