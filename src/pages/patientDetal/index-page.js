@@ -23,7 +23,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
-// import ModernDatepicker from 'react-modern-datepicker';
+import ModernDatepicker from 'react-modern-datepicker';
 var bg = require('../../assets/tab.png')
 var divBg = require('../../assets/tabtwo.png')
 
@@ -34,7 +34,7 @@ class PatientDetail extends React.Component {
     super(props);
     this.state = {
       open: true,
-      date: new Date(),
+      date: '',
       firstName: 'Senelith',
       lastName: 'Perera',
       gender: 'Male',
@@ -84,21 +84,32 @@ class PatientDetail extends React.Component {
                     </Paper>
                   </Grid>
                   <Grid item xl={12} xs={12} sm={12} md={12} lg={12}>
-                    <Paper className={classes.paperTwo} elevation={2}>
-                      <div container="true"
-                        style={{ backgroundImage: "url(" + divBg + ")" }}
-                        className={classes.dateContainer}>
-                        {/* <div className={classes.datePicker}> */}
-                        <Paper elevation={10} className={classes.paperCalendar}>
-                          <Calendar
-                            onChange={this.onChange}
-                            value={this.state.date}
+                  <Paper className={classes.datePickerRoot} elevation={1}>
+                    <Typography variant="h5" component="h3">
+                      This is how you can use this datepicker.
+                    </Typography>
+                    <ModernDatepicker
+                            date={this.state.date}
+                            format={'DD-MM-YYYY'}
+                            showBorder
+                            onChange={date => this.onChange(date)}
+                            placeholder={'Select a date'}
+                            className={classes.modernDatepicker}
                           />
-                        </Paper>
-                      </div>
+                  </Paper>
+                    {/* <Paper className={classes.paperTwo} elevation={2}>
+                      <form className={classes.container} noValidate>
+                        <ModernDatepicker
+                            date={this.state.date}
+                            format={'DD-MM-YYYY'}
+                            showBorder
+                            onChange={date => this.onChange(date)}
+                            placeholder={'Select a date'}
+                            className={classes.modernDatepicker}
+                          />
+                      </form>
+                    </Paper> */}
 
-                      {/* </div> */}
-                    </Paper>
                   </Grid>
                 </Grid>
               </Grid>

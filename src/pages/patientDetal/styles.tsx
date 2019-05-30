@@ -284,4 +284,36 @@ export const styles = (theme: Theme) =>
             padding: '0 8px',
             ...theme.mixins.toolbar,
         },
+        container: {
+            display: 'flex',
+            flexWrap: 'wrap',
+        },
+        textField: {
+            marginLeft: theme.spacing.unit,
+            marginRight: theme.spacing.unit,
+            width: 200,
+        },
+        datePickerRoot: {
+            ...theme.mixins.gutters(),
+            paddingTop: theme.spacing.unit * 2,
+            paddingBottom: theme.spacing.unit * 2,
+            
+          },
+        modernDatepicker : {
+            // width: '100%',
+            boxSizing: 'content-box',
+            border: '0',
+            margin: '0',
+            // padding: '6px 0 7px',
+            display: 'block',
+            minWidth: '0',
+            background: 'none',
+            borderBottom: '1px solid rgba(0, 0, 0, 0.42)',
+            transition: 'border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+            width: '200px',
+            marginLeft: '8px',
+            fontSize: '18px',
+            marginRight: '8px',
+            padding: '10px 15px',
+        }
     });
